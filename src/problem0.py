@@ -25,7 +25,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -276,6 +276,9 @@ def problem0b(n):
     ###########################################################################
     # ------------------------------------------------------------------
 
+    if n>=2:
+        is_prime(n)
+
 
 def run_test_problem0c():
     """ Tests the   problem0c  function. """
@@ -342,6 +345,9 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ###########################################################################
     # -------------------------------------------------------------------------
+    point = rg.Point(200,200)
+    for k in range (n):
+        circle = rg.Circle(point,10)
 
 
 ###############################################################################
