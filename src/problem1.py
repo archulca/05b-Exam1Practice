@@ -29,7 +29,6 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 import testing_helper
 import time
 
-
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_problem1a()
@@ -38,7 +37,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -106,7 +105,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # -------------------------------------------------------------------------
@@ -149,6 +148,19 @@ def run_test_problem1a():
     #   print('       actual:  ', actual)
     # -------------------------------------------------------------------------
 
+    # Test 3:
+    expected = -1.7724  # This is APPROXIMATELY the correct answer.
+    actual = problem1a(4,7)
+    print ('Test 3 expected', expected)
+    print('         actual',actual)
+
+    # Test 4:
+    expected = -0.201398  # This is APPROXIMATELY the correct answer.
+    actual = problem1a(5, 10)
+    print('Test 4 expected', expected)
+    print('         actual', actual)
+
+
 
 def problem1a(m, n):
     """
@@ -168,7 +180,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -176,8 +188,11 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # -------------------------------------------------------------------------
-    if abs(m)<=abs(n):
-        for k in range (m,n):
+    import math
+    total = 0
+    for k in range (m**2,(n**2)+1):
+        total = total + math.sin(k)
+    return total
 
 
 def run_test_problem1b():
