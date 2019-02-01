@@ -52,12 +52,16 @@ def run_test_problem2a():
     rectangle = rg.Rectangle(rg.Point(100, 120), rg.Point(200, 170))
     rectangle.outline_color = 'blue'
     circle.fill_color = 'red'
+    circle.attach_to(window)
+    rectangle.attach_to(window)
     problem2a(circle, rectangle, window)
     window.continue_on_mouse_click()
 
     circle = rg.Circle(rg.Point(300, 100), 50)
     rectangle = rg.Rectangle(rg.Point(300, 170), rg.Point(400, 120))
     rectangle.outline_color = 'green'
+    circle.attach_to(window)
+    rectangle.attach_to(window)
     problem2a(circle, rectangle, window)
     window.close_on_mouse_click()
 
@@ -69,6 +73,8 @@ def run_test_problem2a():
     rectangle = rg.Rectangle(rg.Point(100, 100), rg.Point(50, 250))
     rectangle.outline_color = 'black'
     circle.fill_color = 'yellow'
+    circle.attach_to(window)
+    rectangle.attach_to(window)
     problem2a(circle, rectangle, window)
     window.close_on_mouse_click()
 
@@ -111,6 +117,20 @@ def problem2a(circle, rectangle, window):
     #    DIFFICULTY:      6
     #    TIME ESTIMATE:   10 to 15 minutes.
     # -------------------------------------------------------------------------
+    uppercornerx = rectangle.get_upper_right_corner().x
+    uppercornery = rectangle.get_upper_right_corner().y
+    lowercornerx = rectangle.get_lower_left_corner().x
+    lowercornery = rectangle.get_lower_left_corner().y
+    point1 = rg.Point(uppercornerx,uppercornery)
+    point2 = rg.Point(lowercornerx,lowercornery)
+    line = rg.Line(point1, point2)
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color = 'blue'
+    window.render()
+
+
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
