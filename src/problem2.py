@@ -115,7 +115,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -134,17 +134,15 @@ def problem2a(circle, rectangle, window):
     line.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
-
-    circle.fill_color = rectangle.outline_color = 'blue'
+    if rectangle.outline_color == 'blue':
+        circle.fill_color = 'blue'
     window.render()
-
-    circle.fill_color = rectangle.outline_color = 'green'
+    if rectangle.outline_color == 'green':
+        circle.fill_color = 'green'
     window.render()
-
-
-
-
-
+    if rectangle.outline_color == 'black':
+        circle.fill_color = 'black'
+    window.render()
 
 def run_test_problem2b():
     """ Tests the  problem2b   function. """
