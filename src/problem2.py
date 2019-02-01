@@ -54,6 +54,8 @@ def run_test_problem2a():
     circle.fill_color = 'red'
     circle.attach_to(window)
     rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
     problem2a(circle, rectangle, window)
     window.continue_on_mouse_click()
 
@@ -62,6 +64,8 @@ def run_test_problem2a():
     rectangle.outline_color = 'green'
     circle.attach_to(window)
     rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
     problem2a(circle, rectangle, window)
     window.close_on_mouse_click()
 
@@ -75,6 +79,8 @@ def run_test_problem2a():
     circle.fill_color = 'yellow'
     circle.attach_to(window)
     rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
     problem2a(circle, rectangle, window)
     window.close_on_mouse_click()
 
@@ -124,11 +130,19 @@ def problem2a(circle, rectangle, window):
     point1 = rg.Point(uppercornerx,uppercornery)
     point2 = rg.Point(lowercornerx,lowercornery)
     line = rg.Line(point1, point2)
+    line.arrow = 'last'
     line.attach_to(window)
     window.render()
     window.continue_on_mouse_click()
+
     circle.fill_color = rectangle.outline_color = 'blue'
     window.render()
+
+    circle.fill_color = rectangle.outline_color = 'green'
+    window.render()
+
+
+
 
 
 
