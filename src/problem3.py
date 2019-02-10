@@ -38,7 +38,7 @@ def main():
 def run_test_problem3a():
     """ Tests the   problem3a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   5   ** tests (we wrote four for you).
     # -------------------------------------------------------------------------
@@ -97,9 +97,9 @@ def run_test_problem3a():
     print('       actual:  ', answer)
 
     # Test 5 (it is on window 3):
-    point = rg.Point(40, 30)
+    point = rg.Point(100, 200)
     expected = 100
-    answer = problem3a(window3, point, 10)
+    answer = problem3a(window3, point, 5)
     print()
     print('Test 5 expected:', expected)
     print('       actual:  ', answer)
@@ -155,8 +155,22 @@ def problem3a(window, point, n):
     #    DIFFICULTY:      7 or 8
     #    TIME ESTIMATE:   20 to 35 minutes.
     # -------------------------------------------------------------------------
-    rg.Line(point)
-    thickness =
+    thickness = 1
+    startx = point.x
+    starty = point.y
+    endx = point.x
+    endy = point.y + 50
+    for k in range (n):
+        line = rg.Line(rg.Point((startx+20*k),(starty+10*k)),rg.Point((endx+20*k),endy+10*k))
+        if 2*k < 13:
+            line.thickness = thickness+2*k
+        else:
+            line.thickness = 13
+        line.attach_to(window)
+        window.render()
+
+
+
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
     # Test 1 is ALREADY DONE (here).
