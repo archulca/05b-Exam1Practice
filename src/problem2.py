@@ -159,11 +159,15 @@ def run_test_problem2b():
 
     rectangle = rg.Rectangle(rg.Point(100, 100), rg.Point(140, 120))
     rectangle.fill_color = 'blue'
+    rectangle.attach_to(window)
+    window.render()
     problem2b(rectangle, 6, 15, window)
     window.continue_on_mouse_click()
 
     rectangle = rg.Rectangle(rg.Point(400, 300), rg.Point(350, 200))
     rectangle.fill_color = 'green'
+    rectangle.attach_to(window)
+    window.render()
     problem2b(rectangle, 3, 50, window)
     window.close_on_mouse_click()
 
@@ -172,11 +176,13 @@ def run_test_problem2b():
 
     rectangle = rg.Rectangle(rg.Point(250, 150), rg.Point(200, 200))
     rectangle.fill_color = 'red'
+    rectangle.attach_to(window)
+    window.render()
     problem2b(rectangle, 10, 12, window)
     window.close_on_mouse_click()
 
 
-def problem2b(rect, n, delta, win):
+def problem2b(rectangle, n, delta, window):
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -206,7 +212,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -214,7 +220,16 @@ def problem2b(rect, n, delta, win):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 25 minutes.
     # -------------------------------------------------------------------------
-
+    corner1x = rectangle._upper_left_corner.x
+    corner1y = rectangle._upper_left_corner.y
+    corner2x = rectangle._lower_right_corner.x
+    corner2y = rectangle._lower_right_corner.y
+    for k in range (n):
+        deltax = delta
+        deltay = delta
+        rectangle = rg.Rectangle(rg.Point((corner1x-k*deltax),(corner1y-k*deltay)),rg.Point((corner2x+k*deltax),(corner2y+k*deltay)))
+        rectangle.attach_to(window)
+        window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
