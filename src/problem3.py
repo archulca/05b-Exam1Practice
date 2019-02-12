@@ -98,7 +98,7 @@ def run_test_problem3a():
 
     # Test 5 (it is on window 3):
     point = rg.Point(100, 200)
-    expected = 100
+    expected = 25
     answer = problem3a(window3, point, 5)
     print()
     print('Test 5 expected:', expected)
@@ -147,7 +147,7 @@ def problem3a(window, point, n):
         :type n:      int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -160,6 +160,7 @@ def problem3a(window, point, n):
     starty = point.y
     endx = point.x
     endy = point.y + 50
+    total =0
     for k in range (n):
         line = rg.Line(rg.Point((startx+20*k),(starty+10*k)),rg.Point((endx+20*k),endy+10*k))
         if 2*k < 13:
@@ -168,6 +169,8 @@ def problem3a(window, point, n):
             line.thickness = 13
         line.attach_to(window)
         window.render()
+        total = total + line.thickness
+    return total
 
 
 
