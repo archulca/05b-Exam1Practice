@@ -358,7 +358,7 @@ def problem1c(n):
            and the sum of the digits in 223092870 is 33.
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -372,12 +372,11 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # -------------------------------------------------------------------------
-    for k in range (2,n+1):
-        product = 1
-        if is_prime(k):
-            product = n*k
-            print(product)
-        return sum_of_digits(product)
+    product = 1
+    for k in range (n-1):
+        if (is_prime(2 + k) == True):
+            product = product*(2+k)
+    return (sum_of_digits(product))
 
 
 
